@@ -325,7 +325,7 @@ export const socialLinks: SocialLinks = {
 
 #### Additional Components
 
-We also have `Navbar.astro` and `NavbarMegaMenu.astro` components located in `src/components/sections/navbar&footer`. Ensure to update these components if additional customization or specific configurations are required for the navigation bar or mega menu.
+We also have `Navbar.astro` and `NavbarMegaMenu.astro` components located in `src/components/sections/navbarAndfooter`. Ensure to update these components if additional customization or specific configurations are required for the navigation bar or mega menu.
 
 ## Integrations and Enhancements
 

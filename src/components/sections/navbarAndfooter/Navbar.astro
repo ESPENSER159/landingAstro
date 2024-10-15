@@ -1,5 +1,6 @@
 ---
 //Import relevant dependencies
+import { Image } from "astro:assets";
 import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
 import Authentication from "../misc/Authentication.astro";
@@ -8,6 +9,8 @@ import frStrings from "@utils/fr/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
 
+import featureImage from "@images/logoHitss.png";
+
 // Select the correct translation based on the page's lang prop:
 const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
 const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
@@ -15,11 +18,11 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
 
 <!-- Main header component -->
 <header
-  class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
+  class="mt-4 inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
 >
   <!-- Navigation container -->
   <nav
-    class="relative mx-2 w-full rounded-[36px] border border-yellow-100/40 bg-yellow-50/60 px-4 py-3 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
+    class="relative mx-2 w-full rounded-[36px] border border-neutral-700/40 bg-gray-50 px-4 py-3 backdrop-blur-md dark:border-yellow-400 dark:bg-gray-200 dark:backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
     aria-label="Global"
   >
     <div class="flex items-center justify-between">
@@ -29,7 +32,17 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
         href={homeUrl}
         aria-label="Brand"
       >
-        <BrandLogo class="h-auto w-24" />
+        <!-- <BrandLogo class="h-auto w-24" /> -->
+
+        <Image
+          src="https://mtdevpocstorage.blob.core.windows.net/exposurehitss/logoHitss.png?sp=r&st=2024-09-17T21:04:17Z&se=2025-01-01T05:00:00Z&spr=https&sv=2022-11-02&sr=b&sig=VMh9qIiq2P6j4kAQoMT76u6upNxYPe1fQDX2lG3iXas%3D"
+          alt="Logo"
+          width={250}
+          height={250}
+          class="h-full w-full object-cover object-center"
+          draggable={"false"}
+          loading={"eager"}
+        />
       </a>
       <!-- Collapse toggle for smaller screens -->
       <div class="ml-auto mr-5 md:hidden">
@@ -90,7 +103,7 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
           <NavLink url={link.url} name={link.name} />
         ))}
 
-        <Authentication />
+        <!-- <Authentication /> -->
         <LanguagePicker />
         <!-- ThemeIcon component specifically for larger screens -->
         <span class="hidden md:inline-block">

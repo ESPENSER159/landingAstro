@@ -2,7 +2,12 @@
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSection2 from "@components/sections/landing/HeroSection2.astro";
+import HeroSection3 from "@components/sections/landing/HeroSection3.astro";
+import HeroSection4 from "@components/sections/landing/HeroSection4.astro";
+import HeroSection5 from "@components/sections/landing/HeroSection5.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import HeroSectionAlt2 from "@components/sections/landing/HeroSectionAlt2.astro";
 import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
@@ -14,10 +19,58 @@ import heroImage from "@images/hero-image.avif";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import featureImage from "@images/features-image.avif";
+import agro from "@images/agro.avif";
+import minTrabajo from "@images/minTrabajo.png";
+import colombiaPotencia from "@images/ColombiaPotenciaDeLaVida.png";
+import sevicioEmpleo from "@images/servicioDeEmpleo.png";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
+import FeaturesStatsAlt from "@/components/sections/features/FeaturesStatsAlt.astro";
+import FeaturesStatsAlt2 from "@/components/sections/features/FeaturesStatsAlt2.astro";
+import FeaturesStatsAlt3 from "@/components/sections/features/FeaturesStatsAlt3.astro";
+import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
+import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+import { Image } from "astro:assets";
+
+// Testimonial data that will be rendered in the component
+const testimonials = [
+  // First testimonial data
+  {
+    content: ' "Descripción del beneficio." ',
+    author: "01",
+    role: "Esto es un beneficio",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Second testimonial data
+  {
+    content: ' "Descripción del beneficio." ',
+    author: "02",
+    role: "Esto es un beneficio",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Third testimonial data
+  {
+    content: ' "Descripción del beneficio." ',
+    author: "03",
+    role: "Esto es un beneficio",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  {
+    content: ' "Descripción del beneficio." ',
+    author: "04",
+    role: "Esto es un beneficio",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+];
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -27,17 +80,23 @@ const avatarSrcs: Array<string> = [
 ];
 ---
 
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
 <MainLayout>
-  <AnnouncementBanner
+  <!-- <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Explore ScrewFast on GitHub"
     url="https://github.com/mearashadowfax/ScrewFast"
-  />
+  /> -->
 
   <HeroSection
-    title=`Equip Your Projects with <span
-        class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Top-quality hardware tools and expert construction services for every project need."
+    title=`INTELIGENCIA <span
+        class="text-yellow-700 dark:text-yellow-400">ARTIFICIAL</span>`
+    subTitle=`<span class="text-gray dark:text-white-400 font-bold">Un acelerador de la transformación digital</span>, acompañamos a las empresas en su proceso de adopción e implementación de <span class="text-gray dark:text-white-400 font-bold">soluciones basadas</span> en Inteligencia Artificial.`
     primaryBtn="Start Exploring"
     primaryBtnURL="/products"
     secondaryBtn="Contact Sales Team"
@@ -51,21 +110,309 @@ const avatarSrcs: Array<string> = [
     alt="Stack of ScrewFast product boxes containing assorted hardware tools"
   />
 
-  <ClientsSection
+  <!--Testimonials section-->
+  <TestimonialsSectionAlt title="Beneficios" testimonials={testimonials} />
+
+  <!-- Smart Cities -->
+  <>
+    <HeroSectionAlt title=`Smart Cities` />
+    <HeroSection2
+      title=`Reinventamos el <span
+        class="text-yellow-700 dark:text-yellow-400">futuro</span> urbano`
+      subTitle="Con IA, reinventamos el futuro urbano, promoviendo el bienestar de las personas y el medio ambiente."
+      primaryBtn="Start Exploring"
+      primaryBtnURL="/products"
+      secondaryBtn="Contact Sales Team"
+      secondaryBtnURL="/contact"
+      withReview={true}
+      avatars={avatarSrcs}
+      rating=`<span class="font-bold">4.8</span> / 5`
+      starCount={4}
+      reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
+      src={heroImage}
+      alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    />
+    <FeaturesStatsAlt2
+      title=""
+      subTitle="Transform your ideas into tangible results."
+      benefits={["Item.", "Item.", "Item."]}
+    />
+  </>
+
+  <!-- Agro -->
+  <div class="relative rounded-xl bg-[#226c60b3] pb-10">
+    <!-- <HeroSectionAlt2 title=`Agro` /> -->
+
+    <div class="mx-auto max-w-xl pt-10 text-center">
+      <h2
+        class="block text-balance text-4xl font-bold leading-tight tracking-tight text-neutral-200 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+      >
+        Agro
+      </h2>
+    </div>
+
+    <HeroSection3
+      title=`Impulsando una agricultura más eficiente y sostenible`
+      subTitle=`<span class="text-white">La 
+          <span class="text-white dark:text-white-400 font-bold">
+            visión por computadora
+          </span> es una rama de la  inteligencia artificial que permite a las computadoras interpretar y comprender imágenes y videos. En los últimos años, ha habido un gran avance en esta tecnología, lo que ha permitido su aplicación en una amplia variedad de campos, como la agricultura.</span>`
+      primaryBtn="Start Exploring"
+      primaryBtnURL="/products"
+      secondaryBtn="Contact Sales Team"
+      secondaryBtnURL="/contact"
+      withReview={true}
+      avatars={avatarSrcs}
+      rating=`<span class="font-bold">4.8</span> / 5`
+      starCount={4}
+      reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
+      src={heroImage}
+      alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    />
+
+    <FeaturesStatsAlt3
+      title="Reconocimiento facial"
+      subTitle="Transform your ideas into tangible results."
+      benefits={["Item.", "Item.", "Item."]}
+    />
+
+    <div class="mx-6 mb-7">
+      <p
+        class="text-pretty text-justify text-lg text-neutral-200 dark:text-neutral-400"
+      >
+        En estos tres videos,
+        <span class="text-gray dark:text-white-400 font-bold">
+          se muestra cómo se puede utilizar la visión por computadora
+        </span>
+        para identificar y contar racimos de plátano, manzanas y naranjas. Esto puede
+        ser muy útil para los agricultores, ya que les permite tener una mejor idea
+        de la cantidad de fruta que tienen en sus campos.
+        <br /><br />
+        <span class="text-gray dark:text-white-400 font-bold">
+          La tecnología utilizada en estos videos es bastante sofisticada.
+        </span>
+        Las computadoras utilizan algoritmos de aprendizaje profundo para entrenar
+        modelos que pueden identificar diferentes tipos de fruta.
+        <span class="text-gray dark:text-white-400 font-bold">
+          Estos modelos se entrenan utilizando grandes conjuntos de datos de
+          imágenes de fruta.
+        </span>
+        Una vez que los modelos están entrenados, se pueden utilizar para identificar
+        y contar la fruta en tiempo real. Esto se puede hacer utilizando cámaras
+        montadas en tractores o drones. La visión por computadora es una tecnología
+        muy prometedora que tiene
+        <span class="text-gray dark:text-white-400 font-bold">
+          el potencial de revolucionar la agricultura.
+        </span>
+        En el futuro, es probable que se utilicen cada vez más para mejorar la eficiencia
+        y la productividad de los agricultores.
+      </p>
+    </div>
+
+    <Image
+      src={agro}
+      alt="Agro"
+      class="absolute top-0 -z-10 h-full w-full rounded-xl object-cover object-center"
+      draggable={"false"}
+      format={"avif"}
+      loading={"eager"}
+    />
+  </div>
+
+  <!-- AffectWave -->
+  <div id="affect"></div>
+  <HeroSectionAlt title=`AffectWave` />
+  <HeroSection4
+    title=`Análisis de <span
+        class="text-yellow-700 dark:text-yellow-400">sentimientos</span>`
+    subTitle="Con IA, reinventamos el futuro urbano, promoviendo el bienestar de las personas y el medio ambiente."
+    primaryBtn="Start Exploring"
+    primaryBtnURL="/products"
+    secondaryBtn="Contact Sales Team"
+    secondaryBtnURL="/contact"
+    withReview={true}
+    avatars={avatarSrcs}
+    rating=`<span class="font-bold">4.8</span> / 5`
+    starCount={4}
+    reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
+    src={heroImage}
+    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+  />
+  <div class="mx-44">
+    <p
+      class="text-pretty text-justify text-lg text-neutral-600 dark:text-neutral-400"
+    >
+      La <span class="text-yellow-700 dark:text-yellow-400"
+        >inteligencia artificial</span
+      > está revolucionando el campo de la salud, permitiendo la detección temprana
+      de enfermedades y el desarrollo de tratamientos más personalizados. En nuestro
+      caso, hemos desarrollado un sistema de IA capaz de identificar <span
+        class="text-yellow-700 dark:text-yellow-400"
+        >sentimientos y emociones</span
+      >, así como de detectar posibles afecciones cardiacas en tiempo real. <br
+      /><br /> Nuestro sistema utiliza algoritmos de aprendizaje profundo para analizar
+      una variedad de datos, como <span
+        class="text-yellow-700 dark:text-yellow-400">expresiones faciales</span
+      > captadas por una cámara, el tono de voz durante una conversación o las señales
+      vitales de un paciente. Al identificar patrones en estos datos, podemos detectar
+      cambios sutiles que pueden indicar la presencia de una enfermedad o un estado
+      emocional determinado. Por ejemplo, un cambio en la frecuencia cardíaca o en
+      la variabilidad del ritmo cardíaco puede ser un indicador de una posible afección
+      cardíaca.
+    </p>
+  </div>
+  <div class="flex w-full justify-center">
+    <div class="top-12 overflow-hidden"></div>
+  </div>
+
+  <!-- SkillMatch / TalentSync/ JobFit AI  -->
+  <div id="SkillMatch" class="mt-20 rounded-xl bg-yellow-700 pb-20">
+    <!-- <HeroSectionAlt2 title=`SkillMatch` /> -->
+
+    <div class="mx-auto max-w-xl py-10 text-center">
+      <h2
+        class="block text-balance text-4xl font-bold leading-tight tracking-tight text-neutral-200 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+      >
+        SkillMatch
+      </h2>
+    </div>
+
+    <div class="mx-20">
+      <p
+        class="text-pretty text-justify text-lg text-neutral-200 dark:text-neutral-400"
+      >
+        Es lasolución de inteligencia artificial que
+        <span class="font-bold text-white">revoluciona el reclutamiento.</span>
+        Utilizando algoritmos avanzados,
+        <span class="font-bold text-white">
+          analizamos tu perfil profesional y lo comparamos con miles de ofertas
+          de empleo.
+        </span>
+        Gracias a nuestro sistema de ponderación de habilidades, encontramos el trabajo
+        ideal para ti, maximizando tus oportunidades laborales.
+      </p>
+    </div>
+    <div class="flex w-full justify-center">
+      <div class="top-12 mt-6 overflow-hidden">
+        <video
+          width="700"
+          height="700"
+          controls
+          autoplay
+          loop
+          muted
+          class="rounded-lg"
+        >
+          <source
+            src="https://mtdevpocstorage.blob.core.windows.net/exposurehitss/VIDEO_MINTRABAJO_MICROSITIO.mp4?sp=r&st=2024-09-24T21:45:30Z&se=2025-01-01T05:00:00Z&sv=2022-11-02&sr=b&sig=S6CjE6d82cZjDV9vOGhmr5YbF5GnU92ReEk2vmrKXNI%3D"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="mt-10 justify-evenly hidden sm:flex bg-white rounded-xl mx-10 p-10">
+      <Image
+        src={minTrabajo}
+        alt="minTrabajo"
+        class="h-20 w-auto object-cover object-center"
+        draggable={"false"}
+        format={"avif"}
+        loading={"eager"}
+      />
+
+      <Image
+        src={colombiaPotencia}
+        alt="colombiaPotencia"
+        class="h-20 w-auto object-cover object-center"
+        draggable={"false"}
+        format={"avif"}
+        loading={"eager"}
+      />
+
+      <Image
+        src={sevicioEmpleo}
+        alt="sevicioEmpleo"
+        class="h-20 w-auto object-cover object-center"
+        draggable={"false"}
+        format={"avif"}
+        loading={"eager"}
+      />
+    </div>
+  </div>
+
+  <!-- Identificación de objetos / productos  -->
+  <div id="Identificación" class="my-10">
+    <HeroSectionAlt title=`Identificación de objetos / productos` />
+    <HeroSection5
+      title=`Análisis de <span
+          class="text-yellow-700 dark:text-yellow-400">sentimientos</span>`
+      subTitle="Con IA, reinventamos el futuro urbano, promoviendo el bienestar de las personas y el medio ambiente."
+      primaryBtn="Start Exploring"
+      primaryBtnURL="/products"
+      secondaryBtn="Contact Sales Team"
+      secondaryBtnURL="/contact"
+      withReview={true}
+      avatars={avatarSrcs}
+      rating=`<span class="font-bold">4.8</span> / 5`
+      starCount={4}
+      reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
+      src={heroImage}
+      alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    />
+    <div class="flex w-full justify-center">
+      <div class="top-12 overflow-hidden"></div>
+    </div>
+  </div>
+
+  <!-- Seguridad Industrial -->
+  <!-- <div id="segurity"></div>
+  <HeroSectionAlt2
+    title=`Seguridad Industrial`
+    subTitle="Anticipar riesgos y mejorar la prevención de accidentes"
+  />
+  <div class="flex w-full justify-center">
+    <div class="top-12 overflow-hidden">
+      <video
+        width="700"
+        height="700"
+        controls
+        autoplay
+        loop
+        muted
+        class="rounded-lg"
+      >
+        <source
+          src="https://mtdevpocstorage.blob.core.windows.net/exposurehitss/objetos.mp4?sp=r&st=2024-09-17T21:33:58Z&se=2025-01-01T05:00:00Z&spr=https&sv=2022-11-02&sr=b&sig=T0D8i4SI1ZHXqm875WYfHJK7YM%2FXQFCW9Q1OR3eNH7U%3D"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <div class="mt-36"></div> -->
+
+  <!-- <FeaturesStats
+    title="Reconocimiento facial"
+    subTitle="Transform your ideas into tangible results."
+  /> -->
+
+  <!-- <ClientsSection
     title="Trusted by Industry Leaders"
     subTitle="Experience the reliability chosen by industry giants."
-  />
+  /> -->
 
-  <FeaturesGeneral
+  <!-- <FeaturesGeneral
     title="Meeting Industry Demands"
     subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
     src={featureImage}
     alt="ScrewFast products in floating boxes"
     features={features}
-  />
+  /> -->
 
-  <FeaturesNavs
-    title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
+  <!-- <FeaturesNavs
+    title=`Customize <span class="text-yellow-700 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
     tabs={[
       {
         heading: "Cutting-Edge Tools",
@@ -94,9 +441,9 @@ const avatarSrcs: Array<string> = [
         alt: "Gray metal building frame near tower crane during daytime",
       },
     ]}
-  />
+  /> -->
 
-  <TestimonialsSection
+  <!-- <TestimonialsSection
     title="Fast-Track Your Projects"
     subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
     ;
@@ -131,15 +478,25 @@ const avatarSrcs: Array<string> = [
         description: "quicker assembly using innovative fastening solutions",
       },
     ]}
-  />
+  /> -->
 
-  <PricingSection pricing={pricing} />
+  <!-- <PricingSection pricing={pricing} /> -->
 
-  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+  <FAQ title="Preguntas Frecuentes" faqs={faqs} />
 
-  <HeroSectionAlt
+  <!-- <HeroSectionAlt
     title="Let's Build Together"
     subTitle="ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks."
     url="https://github.com/mearashadowfax/ScrewFast"
-  />
+  /> -->
 </MainLayout>
+
+<script
+  is:inline
+  type="module"
+  src="https://agent.d-id.com/v1/index.js"
+  data-name="did-agent"
+  data-mode="fabio"
+  data-client-key="Z29vZ2xlLW9hdXRoMnwxMTc4MzQzNTgwNzAwMTYyOTc5Nzg6M1FNalpmZnFkY3BQXzJoZ3NTUW9o"
+  data-agent-id="agt_c3F1H9nj"
+  data-monitor="true"></script>

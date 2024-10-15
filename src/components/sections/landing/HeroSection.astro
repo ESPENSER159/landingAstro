@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
+import AI_Animation from "../../lottie/AI";
 
 // Define props from Astro
 const {
@@ -19,7 +20,7 @@ const {
   rating,
   reviews,
   src,
-  alt
+  alt,
 } = Astro.props;
 
 // Define TypeScript interface for props
@@ -41,45 +42,181 @@ interface Props {
 ---
 
 <!-- Defining a grid container that holds all the content -->
+<div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800"></div>
 <section
+  id="home"
   class="mx-auto grid max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
 >
   <!-- Title and description -->
   <div>
     <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
     <h1
+      id="fadeText"
       class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight"
     >
       <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
       <Fragment set:html={title} />
     </h1>
-    {subTitle &&
-    <p
-      class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5"
-    >
-      {subTitle}
-    </p>
-  }
-    <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
-    <div class="mt-7 grid w-full gap-3 sm:inline-flex">
-      {primaryBtn && 
-      <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
-      }
-      {secondaryBtn && 
-      <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
-      }
+    {
+      subTitle && (
+        <p
+          id="fadeInMoveRight"
+          class="mt-3 text-pretty text-justify text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5"
+        >
+          <Fragment set:html={subTitle} />
+        </p>
+      )
+    }
+
+    <div class="mt-8 flex justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" height="200" width="200">
+        <g style="order: -1;">
+          <polygon
+            transform="rotate(45 100 100)"
+            stroke-width="1"
+            stroke="#04c2c8"
+            fill="none"
+            points="70,70 148,50 130,130 50,150"
+            id="bounce"></polygon>
+          <polygon
+            transform="rotate(45 100 100)"
+            stroke-width="1"
+            stroke="#04c2c8"
+            fill="none"
+            points="70,70 148,50 130,130 50,150"
+            id="bounce2"></polygon>
+          <polygon
+            transform="rotate(45 100 100)"
+            stroke-width="2"
+            stroke=""
+            fill="#414750"
+            points="70,70 150,50 130,130 50,150"></polygon>
+          <polygon
+            stroke-width="2"
+            stroke=""
+            fill="url(#gradiente)"
+            points="100,70 150,100 100,130 50,100"></polygon>
+          <defs>
+            <linearGradient y2="100%" x2="10%" y1="0%" x1="0%" id="gradiente">
+              <stop style="stop-color: #1e2026;stop-opacity:1" offset="20%"
+              ></stop>
+              <stop style="stop-color:#414750;stop-opacity:1" offset="60%"
+              ></stop>
+            </linearGradient>
+          </defs>
+          <polygon
+            transform="translate(20, 31)"
+            stroke-width="2"
+            stroke=""
+            fill="#04c2c8"
+            points="80,50 80,75 80,99 40,75"></polygon>
+          <polygon
+            transform="translate(20, 31)"
+            stroke-width="2"
+            stroke=""
+            fill="url(#gradiente2)"
+            points="40,-40 80,-40 80,99 40,75"></polygon>
+          <defs>
+            <linearGradient
+              y2="100%"
+              x2="0%"
+              y1="-17%"
+              x1="10%"
+              id="gradiente2"
+            >
+              <stop style="stop-color: #109fd300;stop-opacity:1" offset="20%"
+              ></stop>
+              <stop
+                style="stop-color:#10acd354;stop-opacity:1"
+                offset="100%"
+                id="animatedStop"></stop>
+            </linearGradient>
+          </defs>
+          <polygon
+            transform="rotate(180 100 100) translate(20, 20)"
+            stroke-width="2"
+            stroke=""
+            fill="#04c2c8"
+            points="80,50 80,75 80,99 40,75"></polygon>
+          <polygon
+            transform="rotate(0 100 100) translate(60, 20)"
+            stroke-width="2"
+            stroke=""
+            fill="url(#gradiente3)"
+            points="40,-40 80,-40 80,85 40,110.2"></polygon>
+          <defs>
+            <linearGradient y2="100%" x2="10%" y1="0%" x1="0%" id="gradiente3">
+              <stop style="stop-color: #109fd300;stop-opacity:1" offset="20%"
+              ></stop>
+              <stop
+                style="stop-color:#10acd354;stop-opacity:1"
+                offset="100%"
+                id="animatedStop"></stop>
+            </linearGradient>
+          </defs>
+          <polygon
+            transform="rotate(45 100 100) translate(80, 95)"
+            stroke-width="2"
+            stroke=""
+            fill="#04c2c8"
+            points="5,0 5,5 0,5 0,0"
+            id="particles"></polygon>
+          <polygon
+            transform="rotate(45 100 100) translate(80, 55)"
+            stroke-width="2"
+            stroke=""
+            fill="#04c2c8"
+            points="6,0 6,6 0,6 0,0"
+            id="particles"></polygon>
+          <polygon
+            transform="rotate(45 100 100) translate(70, 80)"
+            stroke-width="2"
+            stroke=""
+            fill="#fff"
+            points="2,0 2,2 0,2 0,0"
+            id="particles"></polygon>
+          <polygon
+            stroke-width="2"
+            stroke=""
+            fill="#292d34"
+            points="29.5,99.8 100,142 100,172 29.5,130"></polygon>
+          <polygon
+            transform="translate(50, 92)"
+            stroke-width="2"
+            stroke=""
+            fill="#1f2127"
+            points="50,50 120.5,8 120.5,35 50,80"></polygon>
+        </g>
+      </svg>
     </div>
+    <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
+    <!-- <div class="mt-7 grid w-full gap-3 sm:inline-flex">
+      {primaryBtn && <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />}
+      {
+        secondaryBtn && (
+          <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
+        )
+      }
+    </div> -->
 
     <!-- Review Section: This section presents avatars, review ratings and the number of reviews -->
-    { withReview ? (
-    <ReviewComponent avatars={avatars} starCount={starCount} rating={rating} reviews={reviews} />
-    ) : "" }
-
+    <!-- {
+      withReview ? (
+        <ReviewComponent
+          avatars={avatars}
+          starCount={starCount}
+          rating={rating}
+          reviews={reviews}
+        />
+      ) : (
+        ""
+      )
+    } -->
   </div>
   <!-- Hero Image Section -->
-  <div class="flex w-full">
-      <div class="top-12 overflow-hidden">
-	{src && alt &&
+  <div class="flex w-full justify-center">
+    <div class="top-12 overflow-hidden">
+      <!-- {src && alt &&
 	<Image
         src={src}
         alt={alt}
@@ -88,7 +225,128 @@ interface Props {
         loading={"eager"}
         format={"avif"}
 	 />
-	}
+	} -->
+      <AI_Animation client:load />
     </div>
   </div>
 </section>
+
+<!-- <script>
+  import { gsap } from "gsap";
+
+  type AnimationSettings = {
+    autoAlpha?: number;
+    y?: number;
+    x?: number;
+    willChange?: string;
+  };
+
+  function setElementAnimationDefaults(
+    id: string,
+    settings: AnimationSettings
+  ) {
+    gsap.set(id, settings);
+  }
+
+  setElementAnimationDefaults("#fadeText", {
+    autoAlpha: 0,
+    y: 50,
+    willChange: "transform, opacity",
+  });
+
+  setElementAnimationDefaults("#fadeInUp", {
+    autoAlpha: 0,
+    y: 50,
+    willChange: "transform, opacity",
+  });
+
+  setElementAnimationDefaults("#fadeInMoveRight", {
+    autoAlpha: 0,
+    x: 300,
+    willChange: "transform, opacity",
+  });
+
+  let timeline = gsap.timeline({ defaults: { overwrite: "auto" } });
+
+  timeline.to("#fadeText", {
+    duration: 1.5,
+    autoAlpha: 1,
+    y: 0,
+    delay: 1,
+    ease: "power2.out",
+  });
+
+  timeline.to(
+    "#fadeInUp",
+    { duration: 1.5, autoAlpha: 1, y: 0, ease: "power2.out" },
+    "-=1.2"
+  );
+
+  timeline.to(
+    "#fadeInMoveRight",
+    { duration: 1.5, autoAlpha: 1, x: 0, ease: "power2.inOut" },
+    "-=1.4"
+  );
+
+  timeline.to("#overlay", { duration: 1, autoAlpha: 0, delay: 0.2 });
+</script> -->
+
+<style>
+  .container {
+    background-color: #414141;
+  }
+  @keyframes bounce {
+    0%,
+    100% {
+      translate: 0px 36px;
+    }
+    50% {
+      translate: 0px 46px;
+    }
+  }
+  @keyframes bounce2 {
+    0%,
+    100% {
+      translate: 0px 46px;
+    }
+    50% {
+      translate: 0px 56px;
+    }
+  }
+
+  @keyframes umbral {
+    0% {
+      stop-color: #10a9d32e;
+    }
+    50% {
+      stop-color: rgba(16, 143, 211, 0.519);
+    }
+    100% {
+      stop-color: #10a9d32e;
+    }
+  }
+  @keyframes partciles {
+    0%,
+    100% {
+      translate: 0px 16px;
+    }
+    50% {
+      translate: 0px 6px;
+    }
+  }
+  #particles {
+    animation: partciles 4s ease-in-out infinite;
+  }
+  #animatedStop {
+    animation: umbral 4s infinite;
+  }
+  #bounce {
+    animation: bounce 4s ease-in-out infinite;
+    translate: 0px 36px;
+  }
+  #bounce2 {
+    animation: bounce2 4s ease-in-out infinite;
+    translate: 0px 46px;
+    animation-delay: 0.5s;
+  }
+</style>

@@ -29,10 +29,12 @@ const footerLinks = [
 
 const socialLinks = {
   facebook: "#",
-  x: "#",
-  github: "https://github.com/mearashadowfax/ScrewFast",
+  youtube: "https://www.youtube.com/channel/UCb9c_GmL0xyrXC3P5GzSJwA",
+  x: "https://twitter.com/globalhitss?lang=es",
+  github: "#",
   google: "#",
   slack: "#",
+  linkedin: "https://www.linkedin.com/company/global-hitss-colombia"
 };
 
 export default {

@@ -1,0 +1,129 @@
+---
+// Define TypeScript interface for props
+interface Props {
+  title: string;
+  subTitle?: string;
+  benefits?: Array<string>;
+}
+---
+
+<section
+  id="product1"
+  class="mx-auto max-w-[85rem] px-4 pb-10 pt-0 sm:px-6 lg:px-8 lg:pb-14 2xl:max-w-full"
+>
+  <div class="flex flex-col sm:flex-row">
+    <div class="mx-2 flex flex-col justify-center text-center lg:col-span-7 mb-4 sm:mb-0">
+      <video controls autoplay loop muted class="rounded-lg">
+        <source
+          src="https://mtdevpocstorage.blob.core.windows.net/exposurehitss/carros.mp4?sp=r&st=2024-09-17T21:21:42Z&se=2025-01-01T05:00:00Z&spr=https&sv=2022-11-02&sr=b&sig=pzhKea6Aqcx%2F8Np4BcmQIR9W%2B7XwlBH7IfLsiqmAUdo%3D"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="mx-2 flex flex-col justify-center text-center lg:col-span-7">
+      <video controls autoplay loop muted class="rounded-lg">
+        <source
+          src="https://mtdevpocstorage.blob.core.windows.net/exposurehitss/velocidad.mp4?sp=r&st=2024-09-17T21:23:36Z&se=2025-01-01T05:00:00Z&spr=https&sv=2022-11-02&sr=b&sig=BDCVQmu%2FHNcMs7fpZj64fhzMT3Cno8YFDn%2B%2BdggO190%3D"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <p
+    class="mx-6 mt-10 text-pretty text-justify text-lg text-neutral-600 dark:text-neutral-400"
+  >
+    Pero los beneficios van más allá del simple conteo. Gracias a la IA,
+    <span class="text-gray dark:text-white-400 font-bold">
+      podemos obtener información detallada sobre la velocidad de los vehículos
+    </span>
+    , su dirección y hasta su tipo. Estos datos son fundamentales para
+    <span class="text-gray dark:text-white-400 font-bold">
+      optimizar la gestión del tráfico
+    </span>
+    , planificar nuevas infraestructuras y evaluar el impacto de medidas de
+    <span class="text-gray dark:text-white-400 font-bold">
+      movilidad sostenible.
+    </span>
+    Si bien esta tecnología ha avanzado significativamente, aún existen desafíos
+    por superar, como las condiciones climáticas adversas o la presencia de objetos
+    que obstruyen la visión. Sin embargo, estamos convencidos de que la
+    <span class="text-gray dark:text-white-400 font-bold">
+      IA continuará transformando la forma en que entendemos y gestionamos
+      nuestras ciudades.
+    </span>
+  </p>
+
+  <script>
+    import { gsap } from "gsap";
+
+    type AnimationSettings = {
+      autoAlpha?: number;
+      y?: number;
+      x?: number;
+      willChange?: string;
+    };
+
+    function setElementAnimationDefaults(
+      id: string,
+      settings: AnimationSettings,
+    ) {
+      gsap.set(id, settings);
+    }
+
+    setElementAnimationDefaults("#fadeText", {
+      autoAlpha: 0,
+      y: 50,
+      willChange: "transform, opacity",
+    });
+
+    setElementAnimationDefaults("#fadeInUp", {
+      autoAlpha: 0,
+      y: 50,
+      willChange: "transform, opacity",
+    });
+
+    setElementAnimationDefaults("#fadeInMoveRight", {
+      autoAlpha: 0,
+      x: 300,
+      willChange: "transform, opacity",
+    });
+
+    setElementAnimationDefaults("#fadeInMoveLeft", {
+      autoAlpha: 0,
+      x: -300,
+      willChange: "transform, opacity",
+    });
+
+    let timeline = gsap.timeline({ defaults: { overwrite: "auto" } });
+
+    timeline.to("#fadeText", {
+      duration: 1.5,
+      autoAlpha: 1,
+      y: 0,
+      delay: 1,
+      ease: "power2.out",
+    });
+
+    timeline.to(
+      "#fadeInUp",
+      { duration: 1.5, autoAlpha: 1, y: 0, ease: "power2.out" },
+      "-=1.2",
+    );
+
+    timeline.to(
+      "#fadeInMoveRight",
+      { duration: 1.5, autoAlpha: 1, x: 0, ease: "power2.inOut" },
+      "-=1.4",
+    );
+
+    timeline.to(
+      "#fadeInMoveLeft",
+      { duration: 1.5, autoAlpha: 1, x: 0, ease: "power2.inOut" },
+      "-=1.4",
+    );
+
+    timeline.to("#overlay", { duration: 1, autoAlpha: 0, delay: 0.2 });
+  </script>
+</section>
