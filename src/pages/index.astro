@@ -31,6 +31,7 @@ import FeaturesStatsAlt2 from "@/components/sections/features/FeaturesStatsAlt2.
 import FeaturesStatsAlt3 from "@/components/sections/features/FeaturesStatsAlt3.astro";
 import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+import TestimonialsSectionAlt2 from "@components/sections/testimonials/TestimonialsSectionAlt2.astro";
 import { Image } from "astro:assets";
 
 // Testimonial data that will be rendered in the component
@@ -72,6 +73,127 @@ const testimonials = [
   },
 ];
 
+const casosExito = [
+  {
+    content:
+      " \"Since switching to ScrewFast's hardware tools, the efficiency on our construction sites has skyrocketed. The durability of the hex bolts and precision of the machine screws are simply unmatched. It's refreshing to work with a company that truly understands the daily demands of the industry.\" ",
+    author: "MACHINE LEARNING",
+    role: "Site Foreman | TopBuild",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  {
+    content:
+      " \"As an interior designer, I'm always looking for high-quality materials and tools that help bring my visions to life. ScrewFast's mixed screws assortment has been a game-changer for my projects, providing the perfect blend of quality and variety. The outstanding customer support was just the cherry on top!\" ",
+    author: "GEOLOCALIZACIÓN / GEOREFERENCIACIÓN",
+    role: "Interior Designer | Creative Spaces",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  {
+    content:
+      " \"I’ve been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast’s tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
+    author: "MLOPS",
+    role: "Master Carpenter | WoodWright",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  {
+    content:
+      " \"I’ve been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast’s tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
+    author: "DEEP LEARNING",
+    role: "Master Carpenter | WoodWright",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  {
+    content:
+      " \"I’ve been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast’s tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
+    author: "IA GENERATIVA",
+    role: "Master Carpenter | WoodWright",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+];
+
+const icons = [
+  [
+    [
+      "https://upload.wikimedia.org/wikipedia/commons/9/99/Logo_de_Claro.svg",
+      "w-32 h-32",
+    ],
+    [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bienestar_familiar_Colombia_logo.svg/1200px-Bienestar_familiar_Colombia_logo.svg.png",
+      "w-28 h-28",
+    ],
+    [
+      "https://bancohojasdevida.saesas.gov.co/storage//img/sae_logo_outline.png",
+      "w-32 h-32",
+    ],
+    [
+      "https://proksol.com/marketing/wp-content/uploads/2021/03/logo-haceb.png",
+      "w-32 h-32",
+    ],
+    [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnW0wJc-1h2DPHZjgoetqT02AcC5OOC9q63A&s",
+      "w-42 h-12 mt-12",
+    ],
+    [
+      "https://app2.mintrabajo.gov.co/CentrosEntrenamiento/imagenes_mapa/layout_set_logo.png",
+      "w-52 h-36",
+    ],
+    [
+      "https://upload.wikimedia.org/wikipedia/commons/1/12/MinHacienda_%28Colombia%29_logo.png",
+      "w-40 h-12 mt-12",
+    ],
+  ],
+  [
+    [
+      "https://upload.wikimedia.org/wikipedia/commons/9/99/Logo_de_Claro.svg",
+      "w-32 h-32",
+    ],
+    [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bienestar_familiar_Colombia_logo.svg/1200px-Bienestar_familiar_Colombia_logo.svg.png",
+      "w-28 h-28",
+    ],
+    [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnW0wJc-1h2DPHZjgoetqT02AcC5OOC9q63A&s",
+      "w-42 h-12 mt-12",
+    ],
+    [
+      "https://www.lideresvisioncolombia.com.co/wp-content/uploads/2021/06/Logo-Inter-Rapidisimo-Vv-400x431-1.png",
+      "w-32 h-32 mt-12",
+    ],
+  ],
+  [
+    [
+      "https://upload.wikimedia.org/wikipedia/commons/9/99/Logo_de_Claro.svg",
+      "w-32 h-32",
+    ],
+    [
+      "https://www.icbf.gov.co/sites/default/files/logos/logocgr-v.png",
+      "w-28 h-28",
+    ],
+  ],
+  [
+    [
+      "https://app2.mintrabajo.gov.co/CentrosEntrenamiento/imagenes_mapa/layout_set_logo.png",
+      "w-52 h-36",
+    ],
+  ],
+  [
+    [
+      "https://app2.mintrabajo.gov.co/CentrosEntrenamiento/imagenes_mapa/layout_set_logo.png",
+      "w-52 h-36",
+    ],
+  ],
+];
+
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
   "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -111,7 +233,7 @@ const avatarSrcs: Array<string> = [
   />
 
   <!--Testimonials section-->
-  <TestimonialsSectionAlt title="Beneficios" testimonials={testimonials} />
+  <!-- <TestimonialsSectionAlt title="Beneficios" testimonials={testimonials} /> -->
 
   <!-- Smart Cities -->
   <>
@@ -312,7 +434,9 @@ const avatarSrcs: Array<string> = [
       </div>
     </div>
 
-    <div class="mt-10 justify-evenly hidden sm:flex bg-white rounded-xl mx-10 p-10">
+    <div
+      class="mx-10 mt-10 hidden justify-evenly rounded-xl bg-white p-10 sm:flex"
+    >
       <Image
         src={minTrabajo}
         alt="minTrabajo"
@@ -365,6 +489,13 @@ const avatarSrcs: Array<string> = [
       <div class="top-12 overflow-hidden"></div>
     </div>
   </div>
+
+  <!-- Casos de exito -->
+  <TestimonialsSectionAlt2
+    title="Casos De Exito"
+    testimonials={casosExito}
+    icons={icons}
+  />
 
   <!-- Seguridad Industrial -->
   <!-- <div id="segurity"></div>
@@ -482,7 +613,7 @@ const avatarSrcs: Array<string> = [
 
   <!-- <PricingSection pricing={pricing} /> -->
 
-  <FAQ title="Preguntas Frecuentes" faqs={faqs} />
+  <!-- <FAQ title="Preguntas Frecuentes" faqs={faqs} /> -->
 
   <!-- <HeroSectionAlt
     title="Let's Build Together"

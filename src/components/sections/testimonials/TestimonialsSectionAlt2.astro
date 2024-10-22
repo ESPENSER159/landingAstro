@@ -1,0 +1,89 @@
+---
+// Import AvatarTestimonialSection component for use in this module
+import AvatarTestimonialSection2 from "../../ui/avatars/AvatarTestimonialSection2.astro";
+
+// Define props from Astro
+const { title, testimonials, icons } = Astro.props;
+
+// Define TypeScript interface for Testimonial
+interface Testimonial {
+  content: string;
+  author: string;
+  role: string;
+  avatarSrc: string;
+  avatarAlt: string;
+}
+
+// Define TypeScript interface for props
+interface Props {
+  title: string;
+  testimonials: Testimonial[];
+  icons: string[];
+}
+---
+<!-- Main div that wraps the testimonials section -->
+<section
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full rounded-xl bg-yellow-700"
+  id="testimonials"
+>
+  <!-- Title of the testimonials section -->
+  <div class="mb-10 w-full text-center">
+    <h2
+      class="text-balance text-4xl font-bold text-neutral-200 sm:text-4xl lg:text-6xl"
+    >
+      {title}
+    </h2>
+  </div>
+
+  <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
+    <!-- Looping through each testimonial data and rendering it -->
+    {
+      testimonials.map((testimonial, index) => (
+        <div class="flex h-auto">
+          <div class="flex flex-col rounded-xl bg-neutral-50 dark:bg-neutral-700 w-full">
+            <div class="rounded-t-xl bg-neutral-300/30 p-4 dark:bg-neutral-900/30 md:px-7">
+              <div class="flex items-center">
+                {/* <AvatarTestimonialSection2
+                  src={testimonial.avatarSrc}
+                  alt={testimonial.avatarAlt}
+                  svg="handshake"
+                /> */}
+
+                <div class="ms-3 grow">
+                  <p class="text-xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-base">
+                    {testimonial.author}
+                  </p>
+                  {/* <p class="text-lg text-neutral-600 dark:text-neutral-400">
+                    {testimonial.role}
+                  </p> */}
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-auto p-4 md:p-6">
+              <!-- Testimonial content -->
+              {/* <p class="text-pretty text-base italic text-neutral-600 dark:text-neutral-300 md:text-lg">
+                {testimonial.content}
+              </p> */}
+
+            <div class="flex flex-wrap justify-center">
+              {
+                Array.isArray(icons[index]) && icons[index].map((icon: string) => (
+                  <AvatarTestimonialSection2
+                    size={icon[1]}
+                    src={icon[0]}
+                    alt={icon[0]}
+                    svg="handshake"
+                  />
+                ))
+              }
+            </div>
+
+            </div>
+
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
