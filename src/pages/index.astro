@@ -287,7 +287,7 @@ const avatarSrcs: Array<string> = [
 
 <style is:global>
   .didagent__fabio__container {
-    min-height: 95vh !important;
+    min-height: 95vh;
   }
 </style>
 
@@ -713,3 +713,43 @@ const avatarSrcs: Array<string> = [
   data-client-key="Z29vZ2xlLW9hdXRoMnwxMTc4MzQzNTgwNzAwMTYyOTc5Nzg6M1FNalpmZnFkY3BQXzJoZ3NTUW9o"
   data-agent-id="agt_c3F1H9nj"
   data-monitor="true"></script>
+
+<script is:inline type="module">
+  console.log("Inicio");
+  // Busca el contenedor padre didagent_target
+  let getDiv = false;
+
+  const intervalId = setInterval(() => {
+    console.log("Buscando elemento");
+
+    if (document.querySelector('[data-testid="didagent_root"]')) {
+      console.log("Elemento encontrado");
+
+      const shadowRoot = document.querySelector(
+        '[data-testid="didagent_root"]'
+      ).shadowRoot;
+
+      const styleElement = document.createElement("style");
+      styleElement.textContent = `
+        .didagent__fabio__container {
+            min-height: 100vh;
+            position: fixed !important;
+            width: 100%;
+        }
+        .didagent__embedded__video__container {
+            display: flex;
+            justify-content: center;
+        }
+        .didagent__embedded__video__container video {
+            width: 60%;
+        }
+    `;
+
+      shadowRoot.appendChild(styleElement);
+      getDiv = true;
+
+      // Detener el intervalo cuando el elemento se haya encontrado
+      clearInterval(intervalId);
+    }
+  }, 2000);
+</script>
