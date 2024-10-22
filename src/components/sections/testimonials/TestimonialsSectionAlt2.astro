@@ -18,7 +18,7 @@ interface Testimonial {
 interface Props {
   title: string;
   testimonials: Testimonial[];
-  icons: string[];
+  icons: string[][][];
 }
 ---
 <!-- Main div that wraps the testimonials section -->
@@ -68,7 +68,7 @@ interface Props {
 
             <div class="flex flex-wrap justify-center">
               {
-                Array.isArray(icons[index]) && icons[index].map((icon: string) => (
+                Array.isArray(icons[index]) && icons[index].map((icon: string[], iconIndex: number) => (
                   <AvatarTestimonialSection2
                     size={icon[1]}
                     src={icon[0]}
