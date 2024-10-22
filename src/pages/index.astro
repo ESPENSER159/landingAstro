@@ -28,6 +28,7 @@ import FeaturesStatsAlt3 from "@/components/sections/features/FeaturesStatsAlt3.
 import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
 import TestimonialsSectionAlt2 from "@components/sections/testimonials/TestimonialsSectionAlt2.astro";
+import TestimonialsSectionAlt3 from "@components/sections/testimonials/TestimonialsSectionAlt3.astro";
 import { Image } from "astro:assets";
 
 // Testimonial data that will be rendered in the component
@@ -65,6 +66,86 @@ const testimonials = [
     role: "Esto es un beneficio",
     avatarSrc:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+];
+
+const servicios = [
+  {
+    author: "AI Generativa",
+    role: "Esto es un beneficio",
+    content: "Creación de contenido como imágenes, música y texto.",
+    casos: "Mubert: 100 millones de canciones generadas.",
+    avatarSrc:
+      "https://news.mit.edu/sites/default/files/images/202311/GenAI-explain-01-press.jpg",
+    avatarAlt: "Image Description",
+  },
+  {
+    author: "AI Predictiva",
+    role: "Esto es un beneficio",
+    content: "Predicciones meteorológicas. Analisis de riesgos financieros.",
+    casos: "Mejora 25% predicciones a corto plazo.",
+    avatarSrc:
+      "https://revistabyte.es/wp-content/uploads/2023/11/la-revolucion-de-la-inteligencia-artificial-en-sap.jpg",
+    avatarAlt: "Image Description",
+  },
+  {
+    author: "AI Descritiva",
+    role: "Esto es un beneficio",
+    content:
+      "Tendencias de ventas y comportamiento del consumidor. Análisis de datos de pacientes en tiempo real.",
+    casos: "Aumento del 60% en margen operativo de minoristas.",
+    avatarSrc:
+      "https://img.freepik.com/fotos-premium/aprovechando-ia-futuro-tecnologia-predictiva-automatizacion_1311447-1113.jpg",
+    avatarAlt: "Image Description",
+  },
+  {
+    author: "AI Prescriptiva",
+    role: "Esto es un beneficio",
+    content:
+      "Eficiencia en la logística y la gestión de inventarios. Asistencia en la toma de decisiones clínicas.",
+    casos: "Reducción de ingresos hospitalarios en 20%.",
+    avatarSrc:
+      "https://img.freepik.com/fotos-premium/ingeniero-revisando-maquinas-protocolo-seguridad-planta-fabricacion-maquinaria-generative-ai_1041269-155.jpg",
+    avatarAlt: "Image Description",
+  },
+  {
+    author: "AI de Procesamiento de Lenguaje Natural (NLP)",
+    role: "Esto es un beneficio",
+    content:
+      "Asistentes virtuales: Siri, Alexa, y Google. Análisis de sentimientos en redes sociales",
+    casos: "80% de las empresas considerando chatbots",
+    avatarSrc:
+      "https://elcom.com.vn/storage/uploads/images/FOa081grO9KmBLQlHomDeKFYb9pR7tkGQ0gukvVR.jpg",
+    avatarAlt: "Image Description",
+  },
+  {
+    author: "AI de Reconocimiento Visual",
+    role: "Esto es un beneficio",
+    content:
+      "Seguridad y autenticación en dispositivos y sistemas, Diagnósticos médicos",
+    casos: "Autenticación facial de 70 a 150 veces al día",
+    avatarSrc:
+      "https://img.freepik.com/fotos-premium/concepto-sistema-reconocimiento-facial-reconocimiento-facial_587448-3212.jpg",
+    avatarAlt: "Image Description",
+  },
+  {
+    author: "AI de Aprendizaje Profundo (Deep Learning)",
+    role: "Esto es un beneficio",
+    content:
+      "Coches que se conducen solos, traducción automática, herramientas como Google Translate",
+    casos: "60 millones de vehículos autónomos a 2030",
+    avatarSrc:
+      "https://cdn.pixabay.com/photo/2024/01/29/22/47/ai-generated-8540915_640.jpg",
+    avatarAlt: "Image Description",
+  },
+  {
+    author: "AI de Aprendizaje Automático (ML)",
+    role: "Esto es un beneficio",
+    content: "Recomendaciones personalizadas - Cadena de producción medicina.",
+    casos: "16% de los casos de ceguera son debidos a retinopatía diabética",
+    avatarSrc:
+      "https://media.licdn.com/dms/image/v2/C4E12AQFF2gHMAG08Cg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1564688310711?e=2147483647&v=beta&t=PhkddA27cxrGatNx222AYo2nRvnyHL-ikW63Qk03vC4",
     avatarAlt: "Image Description",
   },
 ];
@@ -109,7 +190,7 @@ const casosExito = [
   {
     content:
       " \"I’ve been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast’s tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
-    author: "IA GENERATIVA",
+    author: "AI GENERATIVA",
     role: "Master Carpenter | WoodWright",
     avatarSrc:
       "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
@@ -121,71 +202,71 @@ const icons = [
   [
     [
       "https://upload.wikimedia.org/wikipedia/commons/9/99/Logo_de_Claro.svg",
-      "w-32 h-32",
+      "w-32 h-32 mx-4",
     ],
     [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bienestar_familiar_Colombia_logo.svg/1200px-Bienestar_familiar_Colombia_logo.svg.png",
-      "w-28 h-28",
+      "w-28 h-28 mx-4",
     ],
     [
       "https://bancohojasdevida.saesas.gov.co/storage//img/sae_logo_outline.png",
-      "w-32 h-32",
+      "w-32 h-32 mx-4",
     ],
     [
       "https://proksol.com/marketing/wp-content/uploads/2021/03/logo-haceb.png",
-      "w-32 h-32",
+      "w-32 h-32 mx-4",
     ],
     [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnW0wJc-1h2DPHZjgoetqT02AcC5OOC9q63A&s",
-      "w-42 h-12 mt-12",
+      "w-42 h-12 mt-12 mx-4",
     ],
     [
       "https://app2.mintrabajo.gov.co/CentrosEntrenamiento/imagenes_mapa/layout_set_logo.png",
-      "w-52 h-36",
+      "w-52 h-36 mx-4",
     ],
     [
       "https://upload.wikimedia.org/wikipedia/commons/1/12/MinHacienda_%28Colombia%29_logo.png",
-      "w-40 h-12 mt-12",
+      "w-40 h-12 mt-12 mx-4",
     ],
   ],
   [
     [
       "https://upload.wikimedia.org/wikipedia/commons/9/99/Logo_de_Claro.svg",
-      "w-32 h-32",
+      "w-32 h-32 mx-4",
     ],
     [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bienestar_familiar_Colombia_logo.svg/1200px-Bienestar_familiar_Colombia_logo.svg.png",
-      "w-28 h-28",
+      "w-28 h-28 mx-4",
     ],
     [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnW0wJc-1h2DPHZjgoetqT02AcC5OOC9q63A&s",
-      "w-42 h-12 mt-12",
+      "w-42 h-12 mt-12 mx-4",
     ],
     [
       "https://www.lideresvisioncolombia.com.co/wp-content/uploads/2021/06/Logo-Inter-Rapidisimo-Vv-400x431-1.png",
-      "w-32 h-32 mt-12",
+      "w-32 h-32 mt-12 mx-4",
     ],
   ],
   [
     [
       "https://upload.wikimedia.org/wikipedia/commons/9/99/Logo_de_Claro.svg",
-      "w-32 h-32",
+      "w-32 h-32 mx-4",
     ],
     [
       "https://www.icbf.gov.co/sites/default/files/logos/logocgr-v.png",
-      "w-28 h-28",
+      "w-28 h-28 mx-4",
     ],
   ],
   [
     [
       "https://app2.mintrabajo.gov.co/CentrosEntrenamiento/imagenes_mapa/layout_set_logo.png",
-      "w-52 h-36",
+      "w-52 h-36 mx-4",
     ],
   ],
   [
     [
       "https://app2.mintrabajo.gov.co/CentrosEntrenamiento/imagenes_mapa/layout_set_logo.png",
-      "w-52 h-36",
+      "w-52 h-36 mx-4",
     ],
   ],
 ];
@@ -201,6 +282,10 @@ const avatarSrcs: Array<string> = [
 <style>
   html {
     scroll-behavior: smooth;
+  }
+
+  .didagent__fabio__container {
+    min-height: 95vh !important;
   }
 </style>
 
@@ -230,6 +315,9 @@ const avatarSrcs: Array<string> = [
 
   <!--Testimonials section-->
   <!-- <TestimonialsSectionAlt title="Beneficios" testimonials={testimonials} /> -->
+
+  <!--Productos IA-->
+  <TestimonialsSectionAlt3 title="SERVICIOS DE AI" testimonials={servicios} />
 
   <!-- Smart Cities -->
   <>
@@ -328,7 +416,7 @@ const avatarSrcs: Array<string> = [
     </div>
 
     <img
-      src='https://mtdevpocstorage.blob.core.windows.net/exposurehitss/agro.avif?sp=r&st=2024-10-22T03:04:54Z&se=2025-10-21T11:04:54Z&sv=2022-11-02&sr=b&sig=CwPrEJPBDPtpfdwsKmk%2F31DakETCm4evteNO1hJz6nk%3D'
+      src="https://mtdevpocstorage.blob.core.windows.net/exposurehitss/agro.avif?sp=r&st=2024-10-22T03:04:54Z&se=2025-10-21T11:04:54Z&sv=2022-11-02&sr=b&sig=CwPrEJPBDPtpfdwsKmk%2F31DakETCm4evteNO1hJz6nk%3D"
       alt="Agro"
       class="absolute top-0 -z-10 h-full w-full rounded-xl object-cover object-center"
       draggable={"false"}

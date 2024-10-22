@@ -1,0 +1,87 @@
+---
+// Import AvatarTestimonialSection component for use in this module
+import AvatarTestimonialSection2 from "../../ui/avatars/AvatarTestimonialSection2.astro";
+
+// Define props from Astro
+const { title, testimonials } = Astro.props;
+
+// Define TypeScript interface for Testimonial
+interface Testimonial {
+  content: string;
+  author: string;
+  role: string;
+  avatarSrc: string;
+  avatarAlt: string;
+  casos: string;
+}
+
+// Define TypeScript interface for props
+interface Props {
+  title: string;
+  testimonials: Testimonial[];
+}
+---
+
+<!-- Main div that wraps the testimonials section -->
+<section
+  class="mx-auto max-w-[85rem] rounded-xl bg-yellow-700 px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  id="testimonials"
+>
+  <!-- Title of the testimonials section -->
+  <div class="mb-10 w-full text-center">
+    <h2
+      class="text-balance text-4xl font-bold text-neutral-200 sm:text-4xl lg:text-6xl"
+    >
+      {title}
+    </h2>
+  </div>
+
+  <div class="flex flex-wrap justify-around">
+    <!-- Looping through each testimonial data and rendering it -->
+    {
+      testimonials.map((testimonial) => (
+        <div class="mb-8 flex h-auto w-80 mx-4">
+          <div class="flex w-full flex-col rounded-xl bg-neutral-50 dark:bg-neutral-700">
+            <div class="rounded-t-xl bg-neutral-300/30 p-4 dark:bg-neutral-900/30 md:px-7">
+              <div class="flex items-center">
+                {/* <AvatarTestimonialSection
+                  src={testimonial.avatarSrc}
+                  alt={testimonial.avatarAlt}
+                  svg="handshake"
+                /> */}
+
+                <div class="ms-3 grow">
+                  <p class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
+                    {testimonial.author}
+                  </p>
+                  {/* <p class="text-lg text-neutral-600 dark:text-neutral-400">
+                    {testimonial.role}
+                  </p> */}
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full pb-4 md:pb-6 h-full">
+              <div>
+                <AvatarTestimonialSection2
+                  size="w-full h-52"
+                  src={testimonial.avatarSrc}
+                  alt={testimonial.avatarAlt}
+                  svg="handshake"
+                />
+              </div>
+              <div class="bg-gray-400 text-center py-2 px-4">
+                <p>{testimonial.casos}</p>
+              </div>
+              <div class="m-4">
+                <p class="text-pretty text-base italic text-neutral-600 dark:text-neutral-300 md:text-lg">
+                  {testimonial.content}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
