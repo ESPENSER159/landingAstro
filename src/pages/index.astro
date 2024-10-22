@@ -720,11 +720,7 @@ const avatarSrcs: Array<string> = [
   let getDiv = false;
 
   const intervalId = setInterval(() => {
-    console.log("Buscando elemento");
-
     if (document.querySelector('[data-testid="didagent_root"]')) {
-      console.log("Elemento encontrado");
-
       const shadowRoot = document.querySelector(
         '[data-testid="didagent_root"]'
       ).shadowRoot;
