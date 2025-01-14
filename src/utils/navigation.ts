@@ -8,7 +8,7 @@ const navBarLinks = [
   { name: "Smart Cities", url: "#smartCities" },
   { name: "Agro", url: "#agro" },
   { name: "AffectWave", url: "#affect" },
-  { name: "SkillMatch", url: "#SkillMatch" },
+  // { name: "SkillMatch", url: "#SkillMatch" },
   { name: "Identificación", url: "#Identificación" },
 ];
 // An array of links for footer
@@ -21,7 +21,7 @@ const footerLinks = [
       // { name: "Construction Services", url: "/services" },
       { name: "Agro", url: "#agro" },
       { name: "AffectWave", url: "#affect" },
-      { name: "SkillMatch", url: "#SkillMatch" },
+      // { name: "SkillMatch", url: "#SkillMatch" },
       { name: "Identificación", url: "#Identificación" },
     ],
   },
@@ -39,12 +39,12 @@ const footerLinks = [
 // An object of links for social icons
 const socialLinks = {
   facebook: "#",
-  youtube: "https://www.youtube.com/channel/UCb9c_GmL0xyrXC3P5GzSJwA",
-  x: "https://twitter.com/globalhitss",
+  youtube: "https://www.youtube.com/@bluetabvideo",
+  x: "https://twitter.com/bluetab",
   github: "#",
   google: "#",
   slack: "#",
-  linkedin: "https://www.linkedin.com/company/global-hitss-colombia"
+  linkedin: "https://www.linkedin.com/company/bluetab"
 };
 
 export default {

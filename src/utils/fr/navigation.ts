@@ -29,12 +29,12 @@ const footerLinks = [
 
 const socialLinks = {
   facebook: "#",
-  youtube: "https://www.youtube.com/channel/UCb9c_GmL0xyrXC3P5GzSJwA",
-  x: "https://twitter.com/globalhitss?lang=es",
+  youtube: "https://www.youtube.com/@bluetabvideo",
+  x: "https://twitter.com/bluetab?lang=es",
   github: "#",
   google: "#",
   slack: "#",
-  linkedin: "https://www.linkedin.com/company/global-hitss-colombia"
+  linkedin: "https://www.linkedin.com/company/bluetab"
 };
 
 export default {
